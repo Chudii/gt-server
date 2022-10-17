@@ -9,9 +9,14 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    console.log(req.body)
     Goals.create(req.body, (err, createdGoal) => {
         res.json(createdGoal)
+    })
+})
+
+router.delete('/:id', (req, res) => {
+    Goals.findByIdAndDelete(req.params.id, (err, foundGoal) => {
+        res.redirect('/goals')
     })
 })
 
