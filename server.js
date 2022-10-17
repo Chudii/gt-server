@@ -24,7 +24,7 @@ app.use(cors())
 
 const goalsController = require('./controllers/goals')
 
-app.use('/', goalsController)
+app.use('/goals', goalsController)
 
 app.listen(port, () => {
   console.log(`*** Listening on http://localhost:${port} ***`)

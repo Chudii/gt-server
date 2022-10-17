@@ -5,7 +5,7 @@ const goalSchema = new mongoose.Schema({
     measurability: { type: String, required: true },
     difficulty: { type: Number, required: true },
     category: { type: String, required: true },
-    targetDate: { type: Object, required: true },
+    targetDate: { type: Date, required: true },
     reason: { type: String, required: false }
 })
 
