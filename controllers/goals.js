@@ -8,9 +8,21 @@ router.get('/', (req, res) => {
     })
 })
 
+// router.get('/:id', (req, res) => {
+//     Goals.findById(req.params.id, (err, foundGoal) => {
+//         res.json(foundGoal)
+//     })
+// })
+
 router.post('/', (req, res) => {
     Goals.create(req.body, (err, createdGoal) => {
         res.json(createdGoal)
+    })
+})
+
+router.put('/:id', (req, res) => {
+    Goals.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedGoal) => {
+        res.json(updatedGoal)
     })
 })
 
