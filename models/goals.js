@@ -6,7 +6,14 @@ const goalSchema = new mongoose.Schema({
     difficulty: { type: Number, required: true },
     category: { type: String, required: true },
     targetDate: { type: Date, required: true },
-    reason: { type: String, required: false }
+    reason: { type: String, required: false },
+    tasks: [
+        {
+            title: String,
+            status: String,
+            minutes: Number
+        }
+    ]
 })
 
 const Goals = mongoose.model('Goal', goalSchema)
