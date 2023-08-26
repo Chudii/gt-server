@@ -10,7 +10,6 @@ const goalSchema = new mongoose.Schema({
     tasks: [
         {
             title: String,
-            status: String,
             minutes: Number
         }
     ]
